@@ -10,6 +10,11 @@ dotenv.config({path: __dirname+'/../config.env'});
 //Connect to database
 connectDB();
 
+//route files
+import projectRoutes from "./routes/project.route";
+
+
+
 
 
 const app = express();
@@ -27,6 +32,11 @@ app.use(express.urlencoded({ extended: true }));
 if(process.env.NODE_ENV==='development'){   //only when using dev env
     app.use(morgan('dev'));
 }
+
+
+//mount routers
+app.use('/api/v1/projects', projectRoutes);
+
 
 
 
