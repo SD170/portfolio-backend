@@ -6,8 +6,8 @@ const ProjectSchema = new mongoose.Schema({
         trim: true,
         required: [true, "Please add a course title"],
     },
-    githubLink: {
-        type: String,
+    githubLinks: {
+        type: [String],
     },
     outline: {
         type: String,
