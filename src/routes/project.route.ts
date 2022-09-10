@@ -1,6 +1,6 @@
 import { Router } from "express";
 // import { prefetchProject, createProject, getProjects, updateProject, deleteProject} from '../controllers/project.controller';
-import { getProjects} from '../controllers/project.controller';
+import { getProjects, getProject} from '../controllers/project.controller';
 
 
 const router = Router();
@@ -8,6 +8,7 @@ const router = Router();
 
 
 router.route("/").get(getProjects);
+router.route("/:id").get(getProjects);
 // todo routes:
 
 // router.route("/preFetch").get(prefetchProject);
