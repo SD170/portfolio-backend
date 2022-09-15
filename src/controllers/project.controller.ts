@@ -8,7 +8,7 @@ import ErrorResponse from '../utils/ErrorResponse';
 
 
 //  @desc       get projects
-//  @route      GET /api/v1/projects/
+//  @route      GET /api/v1/projects
 //  @access     Public
 export const getProjects = asyncHandler(async (req: Request, res: Response, next: NextFunction) => {
    
@@ -43,6 +43,23 @@ export const getProject = asyncHandler(async (req: Request, res: Response, next:
 
 });
 
+//  @desc       create single project
+//  @route      POST /api/v1/projects/create
+//  @access     Private
+export const createProject = asyncHandler(async(req: Request, res: Response, next: NextFunction)=>{
+    const newProject = new ProjectModel({
+        ...req.body
+    });
 
+    const savedProject = await newProject.save();
+
+    res.status(200)
+        .json({
+            success: true,
+            message: `Project created successfully`,
+            data: savedProject,
+        });
+
+});
 
 
