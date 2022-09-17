@@ -7,8 +7,9 @@ const connectDB = async () => {
         const mongohost = process.env.MONGOHOST;
         const mongoport = process.env.MONGOPORT;
         const databasename = process.env.DATABASENAME;
+        const dbDockerService = process.env.DB_DOCKER_SERVICE; // needed for docker development
 
-        if (mongohost == "localhost") {
+        if (mongohost == "localhost" || dbDockerService == "true") {
             let mongoString =
                 "mongodb://" + mongohost + ":" + mongoport + "/" + databasename;
             const conn = await mongoose.connect(mongoString);

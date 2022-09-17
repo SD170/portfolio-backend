@@ -14,7 +14,9 @@ RUN npm ci
 COPY . .
 
 # running the nodejs app
-CMD [ "npm", "start" ]
+# CMD [ "npm", "start" ]
+# running the nodejs app with nodemon
+CMD [ "npm", "run", "dev" ]
 
 
 

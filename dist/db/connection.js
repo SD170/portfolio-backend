@@ -20,8 +20,9 @@ const connectDB = () => __awaiter(void 0, void 0, void 0, function* () {
         const mongohost = process.env.MONGOHOST;
         const mongoport = process.env.MONGOPORT;
         const databasename = process.env.DATABASENAME;
-        if (mongohost == "localhost") {
+        if (true) {
             let mongoString = "mongodb://" + mongohost + ":" + mongoport + "/" + databasename;
+            console.error("mongoString ", mongoString);
             const conn = yield mongoose_1.default.connect(mongoString);
             console.log(`MongoDB Connected: ${conn.connection.host}`);
         }

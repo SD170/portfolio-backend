@@ -8,7 +8,7 @@ import ErrorResponse from '../utils/ErrorResponse';
 
 
 //  @desc       get projects
-//  @route      GET /api/v1/projects
+//  @route      GET /api/v1/projects/all
 //  @access     Public
 export const getProjects = asyncHandler(async (req: Request, res: Response, next: NextFunction) => {
    
@@ -24,7 +24,7 @@ export const getProjects = asyncHandler(async (req: Request, res: Response, next
 });
 
 //  @desc       get single project
-//  @route      GET /api/v1/projects/:id
+//  @route      GET /api/v1/projects/all/:id
 //  @access     Public
 export const getProject = asyncHandler(async (req: Request, res: Response, next: NextFunction) => {
 
