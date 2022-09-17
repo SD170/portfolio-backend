@@ -6,6 +6,12 @@ services:
     container_name: db_container # if not provided explicitly; service name would be container name
     image: mongo:latest # the image the container will run; we can pass version instead of latest
     restart: always # restart the service on each docker daemon restart
+    
+    # Port is needed to connect from CLI with
+    # mongosh --port 2717
+    ports:
+      - 2717:27107 
+    
     volumes:
       - mongo_db_volume:/data/db
   
