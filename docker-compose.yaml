@@ -1,5 +1,10 @@
 version: '3.9'
 
+# run with:
+# docker compose up -d(for detach mode) --build(for building after changes)
+# docker compose down
+# docker compose build
+
 services:
   # MongoDB services
   mongo_db: # name of the service
