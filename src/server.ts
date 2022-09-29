@@ -12,6 +12,7 @@ connectDB();
 
 //route files
 import projectRoutes from "./routes/project.route";
+import authRoutes from "./routes/auth.route";
 
 
 
@@ -36,6 +37,7 @@ if(process.env.NODE_ENV==='development'){   //only when using dev env
 
 //mount routers
 app.use('/api/v1/projects', projectRoutes);
+app.use('/api/v1/auth', authRoutes);
 
 
 
